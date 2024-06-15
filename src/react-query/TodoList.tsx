@@ -1,30 +1,24 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-
-interface Todo {
-  id: number;
-  title: string;
-  userId: number;
-  completed: boolean;
-}
+import { useQuery } from '@tanstack/react-query';
+import { useTodos } from './hooks/useTodos';
 
 const TodoList = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
-  const [error, setError] = useState('');
+  const { data: todos, isLoading, error } = useTodos();
 
-  useEffect(() => {
-    axios
-      .get('https://jsonplaceholder.typicode.com/todos')
-      .then((res) => setTodos(res.data))
-      .catch((error) => setError(error));
-  }, []);
+  if (error) {
+    return <p>{error.message}</p>;
+  }
 
-  if (error) return <p>{error}</p>;
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
   return (
-    <ul className="list-group">
-      {todos.map((todo) => (
-        <li key={todo.id} className="list-group-item">
+    <ul className='list-group'>
+      {todos?.map((todo) => (
+        <li
+          key={todo.id}
+          className='list-group-item'
+        >
           {todo.title}
         </li>
       ))}
@@ -32,4 +26,4 @@ const TodoList = () => {
   );
 };
 
-export default TodoList;
+export { TodoList };

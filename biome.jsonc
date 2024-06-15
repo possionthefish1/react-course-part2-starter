@@ -1,0 +1,172 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.1/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"files": {
+		"ignore": [
+			"node_modules",
+			"**/node_modules/**",
+			"dist",
+			"bin"
+		],
+		"ignoreUnknown": true
+	},
+	"linter": {
+		"enabled": true,
+		"ignore": [
+			"*config*.*"
+		],
+		"rules": {
+			"recommended": true, // default true
+			// "all": true,
+			"a11y": {
+				"recommended": true
+			},
+			"complexity": {
+				"all": true,
+				"noVoid": "error",
+				"useSimplifiedLogicExpression": "error",
+				"noExcessiveCognitiveComplexity": "error"
+			},
+			"correctness": {
+				"all": true,
+				"noNewSymbol": "error",
+				"noUnusedImports": {
+					"level": "warn",
+					"fix": "none"
+				},
+				"noUnusedVariables": {
+					"level": "warn",
+					"fix": "none"
+				},
+				"noFlatMapIdentity": "error",
+				"noNodejsModules": "error",
+				"noConstantMathMinMaxClamp": "error",
+				"useArrayLiterals": "error",
+				"noUndeclaredVariables": "error",
+				"noUnusedPrivateClassMembers": "error",
+				"useHookAtTopLevel": "error"
+			},
+			"performance": {
+				"recommended": true,
+				// "noBarrelFile": "error",
+				"noReExportAll": "error"
+			},
+			"security": {
+				"recommended": true
+			},
+			"style": {
+				"recommended": true,
+				"noDefaultExport": "error", // not in recommend
+				"noImplicitBoolean": "error", // not in recommend
+				"noNamespace": "warn", // not in recommend
+				"noNamespaceImport": "warn",
+				"noNegationElse": "error",
+				"noParameterProperties": "warn",
+				// "noRestrictedGlobals": {
+				// 	"level": "error",
+				// 	"options": {
+				// 		"deniedGlobals": [
+				// 			"$",
+				// 			"MooTools"
+				// 		]
+				// 	}
+				// },
+				"noShoutyConstants": "warn",
+				"useBlockStatements": "warn",
+				"useCollapsedElseIf": "error",
+				"useConsistentArrayType": "error",
+				/* "useFilenamingConvention": {
+					"level": "warn",
+					"options": {
+						"strictCase": true,
+						"requireAscii": true,
+						"filenameCases": [
+							"camelCase",
+							"export"
+						]
+					}
+				}, */
+				"useForOf": "warn",
+				"useFragmentSyntax": "warn",
+				// "useNamingConvention": "error",
+				"useNodeAssertStrict": "error",
+				"useShorthandArrayType": "warn",
+				"useShorthandAssign": "warn",
+				"useSingleCaseStatement": "warn"
+			},
+			"suspicious": {
+				"recommended": true,
+				// "all": true,
+				// "noConsoleLog": "info",
+				"noEmptyBlockStatements": "error",
+				"noSkippedTests": "error",
+				"useAwait": "error"
+			},
+			"nursery": {
+				// "all": true,
+				// "noConsole": "info",
+				"noDoneCallback": "error",
+				"noDuplicateAtImportRules": "error",
+				"noDuplicateElseIf": "error",
+				"noDuplicateFontNames": "error",
+				"noDuplicateJsonKeys": "error",
+				"noDuplicateSelectorsKeyframeBlock": "error",
+				"noEmptyBlock": "info",
+				"noEvolvingTypes": "error",
+				"noImportantInKeyframe": "error",
+				"noInvalidPositionAtImportRule": "error",
+				"noLabelWithoutControl": "error",
+				"noMisplacedAssertion": "error",
+				// "noReactSpecificProps": "error",
+				"noRestrictedImports": "error",
+				"noUndeclaredDependencies": "error",
+				"noUnknownFunction": "error",
+				"noUnknownMediaFeatureName": "error",
+				"noUnknownProperty": "error",
+				"noUnknownSelectorPseudoElement": "error",
+				"noUnknownUnit": "error",
+				"noUnmatchableAnbSelector": "warn",
+				"noUnusedFunctionParameters": "warn",
+				"noUselessStringConcat": "error",
+				"noUselessUndefinedInitialization": "warn",
+				"noYodaExpression": "warn",
+				"useAdjacentOverloadSignatures": "error",
+				"useConsistentBuiltinInstantiation": "error",
+				"useDateNow": "error",
+				"useDefaultSwitchClause": "error",
+				"useErrorMessage": "warn",
+				"useExplicitLengthCheck": "warn",
+				"useFocusableInteractive": "warn",
+				"useGenericFontNames": "warn",
+				// "useImportExtensions": "warn",
+				"useNumberToFixedDigitsArgument": "error",
+				// "useSemanticElements": "error",
+				"useSortedClasses": "warn",
+				"useThrowNewError": "error",
+				"useThrowOnlyError": "error"
+				// "useTopLevelRegexp": "error",
+				//New above
+				// "useImportExtensions": "warn",
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "space", //default "tab"
+		"indentWidth": 2, // default 2
+		"lineWidth": 68, // default 80
+		"formatWithErrors": true, // default false
+		"attributePosition": "multiline" // default auto
+	},
+	"javascript": {
+		// also apply to TS files
+		"formatter": {
+			"quoteStyle": "single", // default "double"
+			"jsxQuoteStyle": "single", // default "double"
+			"trailingCommas": "all", //default "all", choose "es5" to add comma only where older browser support.
+			"bracketSameLine": false // default false
+		}
+	}
+}
