@@ -1,4 +1,3 @@
-import { useQuery } from '@tanstack/react-query';
 import { useTodos } from './hooks/useTodos';
 
 const TodoList = () => {

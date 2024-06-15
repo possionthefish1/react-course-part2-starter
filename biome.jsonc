@@ -156,7 +156,7 @@
 		"enabled": true,
 		"indentStyle": "space", //default "tab"
 		"indentWidth": 2, // default 2
-		"lineWidth": 68, // default 80
+		"lineWidth": 80, // default 80
 		"formatWithErrors": true, // default false
 		"attributePosition": "multiline" // default auto
 	},
