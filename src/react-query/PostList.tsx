@@ -2,14 +2,13 @@ import React from 'react';
 import { usePosts } from './hooks/usePosts';
 
 const PostList = () => {
-  const pageSize = 10;
+  const pageSize = 2;
   const {
     data: posts,
     error,
     isLoading,
     fetchNextPage,
     hasNextPage,
-    isFetching,
     isFetchingNextPage,
   } = usePosts({ pageSize });
 
@@ -49,9 +48,6 @@ const PostList = () => {
             ? 'Load More'
             : 'Nothing more to load'}
       </button>
-      <div>
-        {isFetching && !isFetchingNextPage ? 'Fetching...' : null}
-      </div>
     </>
   );
 };

@@ -4,15 +4,24 @@ const TodoForm = () => {
   const ref = useRef<HTMLInputElement>(null);
 
   return (
-    <form className="row mb-3">
-      <div className="col">
-        <input ref={ref} type="text" className="form-control" />
+    <form className='row mb-3'>
+      <div className='col'>
+        <input
+          ref={ref}
+          type='text'
+          className='form-control'
+        />
       </div>
-      <div className="col">
-        <button className="btn btn-primary">Add</button>
+      <div className='col'>
+        <button
+          type='button'
+          className='btn btn-primary'
+        >
+          Add
+        </button>
       </div>
     </form>
   );
 };
 
-export default TodoForm;
+export { TodoForm };
